@@ -1,4 +1,4 @@
-# The Open Guide to Cloud Interface for ABB AbilityTM Smart Sensors
+# The user guide to Cloud Interface for ABB AbilityTM Smart Sensors
 
 ## Scope
 
