@@ -1,8 +1,8 @@
-# The user guide to Cloud Interface for ABB AbilityTM Smart Sensors
+# Cloud Interface user guide for ABB AbilityTM Smart Sensors
 
 ## Scope
 
-- Open guide to learn how to use these [Web APIs](https://api.smartsensor.abb.com/swagger/) for ABB AbilityTM Smart Sensors.
+- User guide to learn how to use these [Web APIs](https://api.smartsensor.abb.com/swagger/) for ABB AbilityTM Smart Sensors.
 - Provide customers with a simple Python class to communicate with the Smart Sensor Web API. This is a sample project as a starting point to build up the integration project(s).
 - Create a community to share new developments, ask questions and propose suggestions for improvements based on real experience.
 - For more details, please refer to the [documentation](docs/Cloud_Interface_Open_Guide.pdf).
