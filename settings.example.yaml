@@ -1,0 +1,8 @@
+# Connection settings
+debug: no
+api_url: https://api.smartsensor.abb.com/
+proxy: none
+
+# Access credentials (the script prioritizes using api_key)
+api_key: yV4z3oP8vYIOwJ9ZsWUWEf2VF9ktre8v0sX5K8Oo0g63jRviEyTss0xv1OoRBvqL
+username: jane.smith@gmail.com
