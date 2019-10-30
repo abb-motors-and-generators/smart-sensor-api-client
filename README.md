@@ -45,9 +45,9 @@ You can run the script by executing
 
     python examples/<example_file_name>
 
-| Name                                   | Explanation                                      | 
-|----------------------------------------|--------------------------------------------------|
-| example_1_list_of_assets.py            | Show the information of all the assets           |
-| example_2_plant_data.py                | Show the information of all the plants           |
-| example_3_detailed_asset_data.py       | Show the detailed information of all the assets  |
-| example_4_latest_asset_measurements.py | Show the latest measurements from all the assets |
+| Name                                    | Explanation                                      | 
+|-----------------------------------------|--------------------------------------------------|
+| use_case_1_list_of_assets.py            | Show the information of all the assets           |
+| use_case_2_plant_data.py                | Show the information of all the plants           |
+| use_case_3_detailed_asset_data.py       | Show the detailed information of all the assets  |
+| use_case_4_latest_asset_measurements.py | Show the latest measurements from all the assets |
