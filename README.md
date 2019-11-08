@@ -26,7 +26,7 @@
 2.  Copy `settings.example.yaml` to `settings.yaml` and change the values. You can adjust your proxy settings (leave empty if none).
     You can also optionally specify your API key or username, which the Smart Sensor Client will use automatically.
 
-3.  To run the first use case, execute
+3.  To run the a simple use case, such as getting the latest measurements from all your assets, execute
 
     ```
     python use_cases/use_case_4_latest_asset_measurements.py
