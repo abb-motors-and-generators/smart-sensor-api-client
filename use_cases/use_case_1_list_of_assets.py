@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Example 4
+"""Example 1
 
-This code prints out the latest measurements from all of your assets.
+This code demonstrates how to get a list of all the assets for each plant in the organization
 
 Example:
-    $ python example_4_latest_asset_measurements.py
+    $ python use_case_1_list_of_assets.py
 
 """
 
 from smart_sensor_client.smart_sensor_client import SmartSensorClient
+from pprint import pprint
 
 DEFAULT_SETTINGS_FILE = 'settings.yaml'
 
@@ -41,21 +42,7 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
             print('No assets in this plant')
         else:
             for asset in assets:
-                asset_data = client.asset_get_asset_by_id(asset_id=asset['assetID'])
-                print('Latest measurements of Asset {}, {}:'.format(asset['assetID'], asset['assetName']))
-
-                if asset_data is None:
-                    # If there is an error, skip to the next asset
-                    continue
-
-                # Iterate all the measurements available and print them
-                for m in asset_data['measurements']:
-
-                    # Print measurements that contain values
-                    if m['measurementValue'] is not None:
-                        print('      ' + m['measurementTypeName'].ljust(37) + ':', m['measurementValue'],
-                              '(' + m['timeStamp'] + ')')
-                print()
+                pprint(asset)
 
         print()
 
