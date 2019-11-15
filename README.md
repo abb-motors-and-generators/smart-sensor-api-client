@@ -32,11 +32,11 @@
     python use_cases/use_case_4_latest_asset_measurements.py
     ```
     
-3.  To authenticate, enter your API key or your email address and password.
+4.  To authenticate, enter your API key or your email address and password. The API Key can be requested by the users under your profile in the [ABB AbilityTM Smart Sensor Platform](https://smartsensor.abb.com). Go to API Keys and select the function “add new”. You will receive the API Key via email from the e-mail address noreply@smartsensor.abb.com.
 
-4.  The sample program will display your assets in your Smart Sensor organization and their latest sensor measurements. You can check the measurements against those you see in the [ABB AbilityTM Smart Sensor Platform](https://smartsensor.abb.com).
+5.  The sample program will display your assets in your Smart Sensor organization and their latest sensor measurements. You can check the measurements against those you see in the [ABB AbilityTM Smart Sensor Platform](https://smartsensor.abb.com).
 
-5.  Finally, you can look at the [source code](use_cases/use_cases_4_latest_asset_measurements.py) and [SmartSensorClient](smart_sensor_client/smart_sensor_client.py) to see how it uses the Cloud Interface and how you can adapt it for your integration project.
+6.  Finally, you can look at the [source code](use_cases/use_cases_4_latest_asset_measurements.py) and [SmartSensorClient](smart_sensor_client/smart_sensor_client.py) to see how it uses the Cloud Interface and how you can adapt it for your integration project.
 
 ## Use Cases
 
