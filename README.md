@@ -1,3 +1,4 @@
+
 # The Open Guide to Cloud Interface for ABB AbilityTM Smart Sensors
 
 ## Scope
@@ -12,6 +13,7 @@
 - Python 3 with `pip` and `setuptools` installed
 - Test that you have access to the [Smart Sensor Web API](https://api.smartsensor.abb.com/swagger/)
 - Obtain an API key from the [Smart Sensor website](https://smartsensor.abb.com)
+- Get to know the feature codes related to the commands to be used, available in the section "Commands", avilable in the [documentation](https://search.abb.com/library/Download.aspx?DocumentID=9AKK107728&LanguageCode=en&DocumentPartId=&Action=Launch).
 
 ## Quick Start
 
