@@ -1,4 +1,4 @@
-# Use Case 3: Show detailed information of all assets	
+# Use Case 3: Show Detailed Information of All Assets	
 
 This code show the information of all the assets belonging to the user's current organization.
 
