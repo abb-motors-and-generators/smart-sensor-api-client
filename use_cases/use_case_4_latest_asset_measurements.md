@@ -1,4 +1,4 @@
-# Use Case 1: Show all asset information
+# Use Case 4: Show latest measurements from all assets	
 
 This code show the information of all the assets belonging to the user's current organization.
 
