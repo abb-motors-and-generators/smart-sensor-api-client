@@ -17,13 +17,12 @@
 
 ## Quick Start
 
-1.  Install necessary libraries using `pip`
-
-        pip install -r requirements.txt
-    
-    Alternatively, install the package using `setuptools` and `pip`
+1.  Install the complete package using `pip` by executing:
     
         python -m pip install .
+        
+    This will install the smart_sensor_client package along with its dependencies.
+    **You need to do this every time you fetch an update from this repository.**
 
 2.  Copy `settings.example.yaml` to `settings.yaml` and change the values. You can adjust your proxy settings (leave empty if none).
     You can also optionally specify your API key or username, which the Smart Sensor Client will use automatically.
