@@ -18,7 +18,7 @@ setuptools.setup(
     description="A library to access the ABB Ability Smart Sensor Cloud Interface",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/abb-motion/",
+    url="https://github.com/abb-motors-and-generators/smart-sensor-api-client",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
