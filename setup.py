@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 import setuptools
 
 # Read in the package description from README.md
-with open("README.md", "r") as fh:
+with open('README.md', encoding='utf8') as fh:
     long_description = fh.read()
 
 # Add the required packages
