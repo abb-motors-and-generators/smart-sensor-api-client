@@ -52,3 +52,4 @@ You can run each script by executing
 | use_case_2_plant_data.py                | Show the information of all the plants           | [code](use_cases/use_case_2_plant_data.py), [usage](use_cases/use_case_2_plant_data.md)                                       |
 | use_case_3_detailed_asset_data.py       | Show the detailed information of all the assets  | [code](use_cases/use_case_3_detailed_asset_data.py), [usage](use_cases/use_case_3_detailed_asset_data.md)                     |
 | use_case_4_latest_asset_measurements.py | Show the latest measurements from all the assets | [code](use_cases/use_case_4_latest_asset_measurements.py), [usage](use_cases/use_case_4_latest_asset_measurements.md)         |
+| use_case_5/5_measurement_values.py      | Plot measurement values of a defined asset       | [code](use_cases/use_case_5/5_measurement_values.py), [usage](use_cases/use_case_5/README.md)         |

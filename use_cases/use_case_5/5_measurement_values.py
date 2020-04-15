@@ -4,7 +4,7 @@
 This code prints out some measurement values for a particular asset
 
 Example:
-    $ python use_case_5_measurement_values.py
+    $ python 5_measurement_values.py
 
 """
 
@@ -32,11 +32,14 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
     # Ask users for their input:
     print('Please enter your query parameters:')
     asset_id = input('Asset ID: ')
-    measurement_type = input('Measurement type (4 for temperature): ')
+
+    possible_measurement_types = client.get_measurement_types(asset_id=asset_id)
+    print(possible_measurement_types)
+    measurement_type = input('Measurement type (find measurementTypeID in list above): ')
     start_date = input('Start date (YYYY-MM-DD): ')
     end_date = input('End date (YYYY-MM-DD): ')
 
-    # Get the temperature data during this time
+    # Get the measurement data during this time
     values = client.get_measurement_value(asset_id=asset_id,
                                           measurement_type=measurement_type,
                                           start_time=start_date,

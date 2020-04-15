@@ -393,6 +393,15 @@ class SmartSensorClient:
         parameters['organizationID'] = self.organization_id
         return self.get_request('Plant', parameters)
 
+    def get_measurement_types(self, asset_id):
+        """Gets all possible measurement types of an asset"""
+        parameters = {}
+        # receive the asset data to find out the asset type ID of the chosen asset
+        asset_data = self.asset_get_asset_data(asset_id)
+        # extract assetTypeID from the received data
+        parameters['assetTypeID'] = asset_data['assetType']['assetTypeID']
+        return self.get_request('Measurement/AssetType', parameters)
+
     def get_asset_measurement(self, asset_id):
         """Gets one single measurement of an asset"""
         parameters = {}
