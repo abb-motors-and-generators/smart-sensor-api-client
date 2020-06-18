@@ -1,3 +1,4 @@
-requests
-pyyaml
-matplotlib
+requests~=2.22.0
+pyyaml~=5.3.1
+matplotlib~=3.1.1
+python-dateutil~=2.8.1

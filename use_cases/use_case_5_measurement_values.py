@@ -9,7 +9,7 @@ Example:
 """
 
 from smart_sensor_client.smart_sensor_client import SmartSensorClient
-from datetime import datetime
+import dateutil.parser
 import matplotlib.pyplot as plt
 
 DEFAULT_SETTINGS_FILE = 'settings.yaml'
@@ -42,7 +42,7 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
                                           start_time=start_date,
                                           end_time=end_date)
 
-    values_to_plot = [[datetime.strptime(v['measurementCreated'], '%Y-%m-%dT%H:%M:%S'), float(v['measurementValue'])]
+    values_to_plot = [[dateutil.parser.parse(v['measurementCreated']), float(v['measurementValue'])]
                       for v in values[0]['measurements']
                       ]
     values_to_plot.sort(key=lambda v: v[0])
