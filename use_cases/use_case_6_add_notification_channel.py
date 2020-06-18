@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """Example 6
 
-This code demonstrates how to sign up a webhook which connects an external URL with the smartsensor platform
+This code demonstrates how to sign up a webhook or another notification channel, which connects an external URL with the smartsensor platform.
 
 Example:
-    $ python use_case_6_add_notification_channel.py *ASSETID*
+    $ python use_case_6_add_notification_channel.py >ASSET ID LIST< -nt >NOTIFICATION TYPE< -nc >NOTIFICATION CHANNEL< -u >URL<
 
 """
 

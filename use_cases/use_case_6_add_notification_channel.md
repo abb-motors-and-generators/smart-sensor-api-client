@@ -31,7 +31,8 @@ Defines the interface where the notification should be sent
 - webhooks = 3
 
 ### URL
-The URL is the endpoint of the notification. You can use your own server, but for testing purposes we suggest to use the website [https://webhook.site](https://webhook.site).
+The URL is the endpoint of the notification, where your own server shall be used . In case you do not have an own server available, the website https://webhook.site can be used for testing purposes at the user’s own risk. 
+The accountability for the use of the software https://webhook.site is with the user.
 1. Go to [https://webhook.site](https://webhook.site)
 2. Copy `Your unique URL`
 3. Use this URL as an argument
