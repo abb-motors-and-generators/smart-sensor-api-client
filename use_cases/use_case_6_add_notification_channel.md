@@ -1,6 +1,6 @@
 # Use Case 6: Add Notification Channel
 
-This code demonstrates how to add a notification channel to a specific asset
+This code demonstrates how to add a notification channel to a specific asset.
 
 If you have not configured your credentials in the `settings.yaml` file in the root folder,
 the program will ask you to input your username, password, or API key.
