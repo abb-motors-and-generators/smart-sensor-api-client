@@ -23,6 +23,7 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, asset_list=None, notification_
         print('Authentication FAILED')
         return False
 
+    # Add a notification channel
     response = client.add_notification_channel(notification_type, notification_channel, asset_list, url)
 
     if response is False:
