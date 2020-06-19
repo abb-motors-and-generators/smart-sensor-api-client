@@ -3,6 +3,7 @@ import requests
 import logging
 import yaml
 from getpass import getpass
+import curlify
 
 
 class SmartSensorClient:
@@ -427,6 +428,10 @@ class SmartSensorClient:
         # Send the request and get the response
         response = requests.get(url, headers=headers, params=parameters, proxies=self.proxies)
 
+        # Print curl request
+        print('Sent curl request:')
+        print(curlify.to_curl(response.request))
+
         # Parse the response into json format
         response_json = json.loads(response.content)
 
@@ -459,6 +464,10 @@ class SmartSensorClient:
 
         # Send the request and get the response
         response = requests.put(url, headers=headers, data=data, proxies=self.proxies)
+
+        # Print curl request
+        print('Sent curl request:')
+        print(curlify.to_curl(response.request))
 
         # Parse the JSON reply
         response_json = json.loads(response.content)
