@@ -31,7 +31,9 @@ Defines the interface where the notification should be sent
 - webhooks = 3
 
 ### URL
-The URL is the endpoint of the notification, where your own server shall be used . In case you do not have an own server available, the website https://webhook.site can be used for testing purposes at the user’s own risk. 
+The URL is the endpoint that the Smart Sensor cloud would send the notification to, which is typically a web service exposed by your system.
+If you don't have this web service, you can go to https://webhook.site to set up a temporary endpoint.
+In this case, your data will be sent to Webhook.site so please pay attention to their privacy policy and use it at your own risk.
 The accountability for the use of the software https://webhook.site is with the user.
 1. Go to [https://webhook.site](https://webhook.site)
 2. Copy `Your unique URL`
