@@ -16,7 +16,11 @@ To run the code, execute:
 
     Please enter your query parameters:
     Asset ID: 2000
-    Measurement type (4 for temperature): 4
+    Speed -> 2
+    Slip -> 3
+    Skin Temperature -> 4
+    Operating Power -> 6
+    Measurement type (find possible IDs in list above, separated by commas): 2
     Start date (YYYY-MM-DD): 2019-02-15
     End date (YYYY-MM-DD): 2019-06-15
     Task SUCCESS
