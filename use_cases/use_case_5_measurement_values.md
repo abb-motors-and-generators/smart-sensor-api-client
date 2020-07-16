@@ -7,7 +7,7 @@ the program will ask you to input your username, password, or API key.
 
 To run the code, execute:
 
-    python 5_measurement_values.py
+     python use_case_5_measurement_values.py
     
 <details>
   <summary>Sample output - Click to expand!</summary>
@@ -21,6 +21,6 @@ To run the code, execute:
     End date (YYYY-MM-DD): 2019-06-15
     Task SUCCESS
     
-![Example Measurement Plot](../../example_measurement_plot.png "Example Measurement Plot")
+![Example Measurement Plot](../example_measurement_plot.png "Example Measurement Plot")
 
 </details>
