@@ -499,14 +499,11 @@ class SmartSensorClient:
         print('Sent curl request:')
         print(curlify.to_curl(response.request))
 
-        # Parse the JSON reply
-        response_json = json.loads(response.content)
-
         if response.status_code != 200:
             print('Error: Response Code', str(response.status_code))
             return False
 
-        # Parse the JSON reply
+        # Print the JSON response
         if response.text:
             try:
                 return json.loads(response.text)
@@ -514,7 +511,7 @@ class SmartSensorClient:
                 txt = f"Unable to decode response content: ({response.text})"
                 print(txt)
 
-        return response_json
+        return True
 
     @staticmethod
     def get_feature_code(api):
