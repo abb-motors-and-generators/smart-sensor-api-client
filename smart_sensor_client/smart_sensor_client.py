@@ -408,6 +408,32 @@ class SmartSensorClient:
         parameters['to'] = end_time
         return self.get_request('Measurement/Value', parameters)
 
+    def add_notification_channel(self, id, channel_id, asset_id_list, url):
+        # This endpoint requires data as an application/json content type
+        content_type = 'application/json-patch+json'
+        parameters = dict()
+        parameters["assetIDList"] = asset_id_list
+        parameters["properties"] = [
+                {
+                    "key": "verb",
+                    "value": "POST"
+                },
+                {
+                    "key": "path",
+                    "value": url
+                },
+            ]
+        parameters["template"] = """{ 
+                \"type\": id, 
+                \"content\": { 
+                    \"assetID\": {AssetID},
+                    \"assetName\": \"{AssetName}\",
+                    \"organizationID\": {AssetOrganizationID},
+                    \"organizationName\": \"{AssetOrganizationName}\" } 
+                }"""
+
+        return self.put_request('Notification/Asset/Channel/' + str(id) + '?channelID=' + str(channel_id), parameters, content_type=content_type)
+
     def get_request(self, api, parameters=None, feature_code=None):
         """Worker function to perform the GET request"""
 
@@ -446,24 +472,28 @@ class SmartSensorClient:
 
         return response_json
 
-    def put_request(self, api, data, feature_code=''):
-        """Worker function to perform the GET request"""
+    def put_request(self, api, data, feature_code=None, content_type=None):
+        """Worker function to perform the PUT request"""
 
         # If the feature code was not provided, try to find it
-        if feature_code == '':
+        if feature_code is None:
             feature_code = self.get_feature_code(api)
 
         # Set up headers
         headers = dict()
-        headers['Authorization'] = 'Bearer ' + self.auth_token
-        if feature_code != '':
+        if self.auth_token is not None:
+            headers['Authorization'] = 'Bearer ' + self.auth_token
+        if feature_code is not None:
             headers['FeatureCode'] = feature_code
+        if content_type is not None:
+            headers["Content-Type"] = content_type
 
         # Set up the URL
         url = self.url + api
 
         # Send the request and get the response
-        response = requests.put(url, headers=headers, data=data, proxies=self.proxies)
+        str_data = json.dumps(data)
+        response = requests.put(url, headers=headers, data=str_data, proxies=self.proxies)
 
         # Print curl request
         print('Sent curl request:')
@@ -473,10 +503,16 @@ class SmartSensorClient:
         response_json = json.loads(response.content)
 
         if response.status_code != 200:
-            print('Error: Response Code', str(response.status_code), response_json)
-            return []
+            print('Error: Response Code', str(response.status_code))
+            return False
 
-        # Parse the response into json format
+        # Parse the JSON reply
+        if response.text:
+            try:
+                return json.loads(response.text)
+            except json.JSONDecodeError:
+                txt = f"Unable to decode response content: ({response.text})"
+                print(txt)
 
         return response_json
 
