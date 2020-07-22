@@ -51,11 +51,14 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
     fig, axs = plt.subplots(len(measurements))
     for index, measurement in enumerate(measurements):
         if measurement['measurements'][0]['measurementValue'] is not None:
+            # get values and timestamps into a list
             values_to_plot = [[dateutil.parser.parse(v['measurementCreated']), float(v['measurementValue'])]
                               for v in measurement['measurements']
                               ]
+            # sort values by timestamp
             values_to_plot.sort(key=lambda v: v[0])
 
+            # store a separate timestamp and value list
             measurement_timestamp = [v[0] for v in values_to_plot]
             measurement_values = [v[1] for v in values_to_plot]
 
@@ -63,6 +66,7 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
             axs[index].plot(measurement_timestamp, measurement_values)
             axs[index].set_title(measurement['measurementTypeName'])
         else:
+            # if no measurements were found for this type, print an error message
             print('No measurements for measurement type ' + str(
                 measurement['measurementTypeName']) + ' could be fetched.')
             axs[index].set_title(measurement['measurementTypeName'])
