@@ -1,24 +1,30 @@
 # Use Case 5: Plot Measurement Values from Chosen Asset	
 
-This code will plot values of one measurement type in a defined date range of a chosen asset.
+This code will plot values of defined measurement types in a defined date range of a chosen asset.
 
 If you have not configured your credentials in the `settings.yaml` file in the root folder,
 the program will ask you to input your username, password, or API key.
 
 To run the code, execute:
 
-    python use_case_5_measurement_values.py
+     python use_case_5_measurement_values.py
     
-Sample output:
+<details>
+  <summary>Sample output - Click to expand!</summary>
     
     Organization 1234, Tasty Manufacturing
 
     Please enter your query parameters:
     Asset ID: 2000
-    Measurement type (4 for temperature): 4
+    Speed -> 2
+    Slip -> 3
+    Skin Temperature -> 4
+    Operating Power -> 6
+    Measurement type (find possible IDs in list above, separated by commas): 2
     Start date (YYYY-MM-DD): 2019-02-15
     End date (YYYY-MM-DD): 2019-06-15
     Task SUCCESS
     
 ![Example Measurement Plot](../example_measurement_plot.png "Example Measurement Plot")
 
+</details>
