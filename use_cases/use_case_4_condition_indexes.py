@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Example 3
+"""Example 4
 
-This code demonstrates how to get the asset details of all assets belonging to the user's organization.
+This code demonstrates how to get the condition indexes of one or multiple assets.
 
 Example:
-    $ python use_case_3_detailed_asset_data.py
+    $ python use_case_4_condition_indexes.py -a <ASSET ID LIST>
 
 """
 
