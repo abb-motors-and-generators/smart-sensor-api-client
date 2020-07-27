@@ -14,15 +14,15 @@ Sample output:
 
     Asset ID: 1234
     Availability: Good
-    Environment: Bad
+    Environment: Poor
     Reliability: Good
     Stress: Good
     Overall Condition Index: Good
     
     Asset ID: 5678
     Availability: Good
-    Environment: Good
+    Environment: Tolerable
     Reliability: Good
-    Stress: Bad
+    Stress: Poor
     Overall Condition Index: Good
     Task SUCCESS
