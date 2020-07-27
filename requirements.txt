@@ -1,4 +1,6 @@
-requests
-pyyaml
-matplotlib
-python-dateutil
+requests~=2.22.0
+pyyaml~=5.3.1
+matplotlib~=3.1.1
+python-dateutil~=2.8.1
+setuptools~=45.2.0
+curlify~=2.2.1

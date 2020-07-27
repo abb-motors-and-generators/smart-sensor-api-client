@@ -14,9 +14,9 @@ import argparse
 DEFAULT_SETTINGS_FILE = 'settings.yaml'
 
 
-def run_task(settings_file=DEFAULT_SETTINGS_FILE, asset_list=None, notification_type=None, notification_channel=None, url=None) -> bool:
+def run_task(settings_file=DEFAULT_SETTINGS_FILE, asset_list=None, notification_type=None, notification_channel=None, url=None, debug: bool = False) -> bool:
     # Create the client instance
-    client = SmartSensorClient(settings_file=settings_file)
+    client = SmartSensorClient(settings_file=settings_file, debug=debug)
 
     # Authenticate
     if not client.authenticate():
@@ -39,9 +39,10 @@ if __name__ == '__main__':
     parser.add_argument('-t', '--notification-type', type=int, help='an integer for the notification type')
     parser.add_argument('-c', '--notification-channel', type=int, help='an integer for the notification channel')
     parser.add_argument('-u', '--url', type=str, help='an url where the webhook should be attached to')
+    parser.add_argument('-d', '--debug', action='store_true', help='print debug information such as the sent curl request')
     args = parser.parse_args()
 
-    result = run_task(asset_list=args.asset_list, notification_type=args.notification_type, notification_channel=args.notification_channel, url=args.url)
+    result = run_task(asset_list=args.asset_list, notification_type=args.notification_type, notification_channel=args.notification_channel, url=args.url, debug=args.debug)
 
     if result is True:
         print('Task SUCCESS')

@@ -3,6 +3,7 @@ import requests
 import logging
 import yaml
 from getpass import getpass
+import curlify
 
 
 class SmartSensorClient:
@@ -20,7 +21,7 @@ class SmartSensorClient:
 
     DEFAULT_API_URL = 'https://api.smartsensor.abb.com/'
 
-    def __init__(self, settings_file: str = ''):
+    def __init__(self, settings_file: str = '', debug: bool = False):
         """Initializes SmartSensorAPIClient
 
         Args:
@@ -49,6 +50,7 @@ class SmartSensorClient:
 
         # Parse the settings file
         self.configure(settings_file)
+        self.debug = debug
 
     def configure(self, settings_file):
         """Configures the client using a config file
@@ -462,6 +464,11 @@ class SmartSensorClient:
         # Send the request and get the response
         response = requests.get(url, headers=headers, params=parameters, proxies=self.proxies)
 
+        # Print curl request
+        if self.debug:
+            print('Sent curl request:')
+            print(curlify.to_curl(response.request))
+
         # Parse the response into json format
         response_json = json.loads(response.content)
 
@@ -499,11 +506,16 @@ class SmartSensorClient:
         str_data = json.dumps(data)
         response = requests.put(url, headers=headers, data=str_data, proxies=self.proxies)
 
+        # Print curl request
+        if self.debug:
+            print('Sent curl request:')
+            print(curlify.to_curl(response.request))
+
         if response.status_code != 200:
             print('Error: Response Code', str(response.status_code))
             return False
 
-        # Parse the JSON reply
+        # Print the JSON response
         if response.text:
             try:
                 return json.loads(response.text)

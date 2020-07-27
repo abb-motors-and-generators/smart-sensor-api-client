@@ -11,13 +11,16 @@ Example:
 from smart_sensor_client.smart_sensor_client import SmartSensorClient
 import dateutil.parser
 import matplotlib.pyplot as plt
+import argparse
+
 
 DEFAULT_SETTINGS_FILE = 'settings.yaml'
 
 
-def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
+def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
+
     # Create the client instance
-    client = SmartSensorClient(settings_file=settings_file)
+    client = SmartSensorClient(settings_file=settings_file, debug=debug)
 
     # Authenticate
     if not client.authenticate():
@@ -79,8 +82,11 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE) -> bool:
 
 # Main body
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Plot values of one or more measurement types in a defined date range of a chosen asset.')
+    parser.add_argument('-d', '--debug', action='store_true', help='print debug information such as the sent curl request')
+    args = parser.parse_args()
 
-    result = run_task()
+    result = run_task(debug=args.debug)
 
     if result is True:
         print('Task SUCCESS')
