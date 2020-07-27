@@ -35,9 +35,9 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, asset_list=None, notification_
 # Main body
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Add a notification channel to the smart sensor platform.')
-    parser.add_argument('asset_list', metavar='asset', type=int, nargs='+', help='possibly multiple asset IDs for which the notification should be setup')
-    parser.add_argument('-nt', '--notification_type', type=int, help='an integer for the notification type')
-    parser.add_argument('-nc', '--notification_channel', type=int, help='an integer for the notification channel')
+    parser.add_argument('-a', '--asset-list', nargs='+',  help='possibly multiple asset IDs for which the notification should be setup', type=int, required=True)
+    parser.add_argument('-t', '--notification-type', type=int, help='an integer for the notification type')
+    parser.add_argument('-c', '--notification-channel', type=int, help='an integer for the notification channel')
     parser.add_argument('-u', '--url', type=str, help='an url where the webhook should be attached to')
     parser.add_argument('-d', '--debug', action='store_true', help='print debug information such as the sent curl request')
     args = parser.parse_args()
@@ -48,4 +48,3 @@ if __name__ == '__main__':
         print('Task SUCCESS')
     else:
         print('Task FAILED')
-
