@@ -1,6 +1,6 @@
 # Use Case 3: Show Detailed Information of All Assets	
 
-This code show the information of all the assets belonging to the user's current organization.
+This code shows the information of all the assets belonging to the user's current organization.
 
 If you have not configured your credentials in the `settings.yaml` file in the root folder,
 the program will ask you to input your username, password, or API key.
