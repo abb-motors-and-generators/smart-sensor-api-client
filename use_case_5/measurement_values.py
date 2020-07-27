@@ -4,7 +4,7 @@
 This code prints out some measurement values for a particular asset
 
 Example:
-    $ python use_case_5_measurement_values.py
+    $ python measurement_values.py
 
 """
 

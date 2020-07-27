@@ -4,7 +4,7 @@
 This code demonstrates how to get a list of all the assets for each plant in the organization
 
 Example:
-    $ python use_case_1_list_of_assets.py
+    $ python list_of_assets.py
 
 """
 

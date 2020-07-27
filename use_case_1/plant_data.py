@@ -4,7 +4,7 @@
 This code demonstrates how to get the information of every plant in the organization
 
 Example:
-    $ python use_case_2_plant_data.py
+    $ python plant_data.py
 
 """
 

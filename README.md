@@ -30,14 +30,14 @@
 3.  To run a simple use case, such as getting the latest measurements from all your assets, execute
 
     ```
-    python use_cases/use_case_4_latest_asset_measurements.py
+    python use_case_1/plant_data.py
     ```
     
 4.  To authenticate, enter your API key or your email address and password. The API Key can be requested by the users under your profile in the [ABB AbilityTM Smart Sensor Platform](https://smartsensor.abb.com). Go to API Keys and select the function “add new”. You will receive the API Key via email from the e-mail address noreply@smartsensor.abb.com.
 
 5.  The sample program will display your assets in your Smart Sensor organization and their latest sensor measurements. You can check the measurements against those you see in the [ABB AbilityTM Smart Sensor Platform](https://smartsensor.abb.com).
 
-6.  Finally, you can look at the [source code](use_cases/use_cases_4_latest_asset_measurements.py) and [SmartSensorClient](smart_sensor_client/smart_sensor_client.py) to see how it uses the Cloud Interface and how you can adapt it for your integration project.
+6.  Finally, you can look at the use cases (see table below) and [SmartSensorClient](smart_sensor_client/smart_sensor_client.py) to see how it uses the Cloud Interface and how you can adapt it for your integration project.
 
 ## Use Cases
 
@@ -47,9 +47,11 @@ You can run each script by executing
     python use_cases/<use_case_file_name>
 
 | Name                                    | Explanation                                      | Links                                                                                                                         |
-|-----------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| use_case_1_list_of_assets.py            | Show the information of all the assets           | [code](use_cases/use_case_1_list_of_assets.py), [usage](use_cases/use_case_1_list_of_assets.md)                               |
-| use_case_2_plant_data.py                | Show the information of all the plants           | [code](use_cases/use_case_2_plant_data.py), [usage](use_cases/use_case_2_plant_data.md)                                       |
-| use_case_3_detailed_asset_data.py       | Show the detailed information of all the assets  | [code](use_cases/use_case_3_detailed_asset_data.py), [usage](use_cases/use_case_3_detailed_asset_data.md)                     |
-| use_case_4_latest_asset_measurements.py | Show the latest measurements from all the assets | [code](use_cases/use_case_4_latest_asset_measurements.py), [usage](use_cases/use_case_4_latest_asset_measurements.md)         |
-| use_case_5_measurement_values.py      | Plot measurement values of a defined asset         | [code](use_cases/use_case_5_measurement_values.py), [usage](use_cases/use_case_5_measurement_values.md)         |
+|-----------------------------------------|--------------------------------------------------|----------------------------------------------------------------------|
+| use_case_1/plant_data.py                | Show all the information about a plant           | [code](use_case_1/plant_Data.py), [usage](use_case_1)                |
+| use_case_1/list_of_assets.py            | Show all assets inside an organization           | [code](use_case_1/list_of_assets.py), [usage](use_case_1)            |
+| use_case_1/detailed_asset_data.py       | Show detailed information about an asset         | [code](use_case_1/detailed_asset_data.py), [usage](use_case_1)       |
+| use_case_2/add_notification_channel.py  | Add a notification channel to a sensor           | [code](use_case_2/add_notification_channel.py), [usage](use_case_2)  |
+| TODO                                    | TODO                                             | [code](use_case_3/TODO), [usage](use_case_3)                         |
+| use_case_4/conditon_indexes.py          | Show condition indexes of one or multiple assets | [code](use_case_4/condition_indexes.py), [usage](use_cases_4)        |
+| use_case_5/measurement_values.py        | Plot measurement values of a defined asset       | [code](use_case_5/measurement_values.py), [usage](use_case_5)        |

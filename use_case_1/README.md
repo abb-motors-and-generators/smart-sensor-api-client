@@ -1,18 +1,100 @@
-# Use Case 3: Show Detailed Information of All Assets	
+# Use Case 1: Request Asset Details
 
-This code shows the information of all the assets belonging to the user's current organization.
+With this use case, the different kind of asset data can be requested. Find below three example scripts that can be executed.
 
-If you have not configured your credentials in the `settings.yaml` file in the root folder,
-the program will ask you to input your username, password, or API key.
+## Plant Data 
+This code demonstrates how to get the information of every plant in the organization
 
-To run the code, execute:
+### Execute
+To run this demo, execute the following script:
 
-    python use_case_3_detailed_asset_data.py
-    
-Sample output:
+    python use_case_1/plant_data.py
 
+### Result
+<details><summary>Click for Sample Output</summary>
+<p>
+        
     Organization 1234, Tasty Manufacturing
     
+    {'address': 'Smart Street 1, 10001 New York, USA',
+     'city': 'New York',
+     'country': 'USA',
+     'industryTypeID': 3,
+     'industryTypeName': 'Other',
+     'locationLatitude': '-74.00594130000000000000',
+     'locationLongitude': '40.71278370000000000000',
+     'organization': {'isPrivateOrgarnization': False,
+                      'organizationID': 1234,
+                      'organizationName': 'Tasty Manufacturing'},
+     'pinNumber': '12345',
+     'plantID': 5678,
+     'plantName': 'Food Factory',
+     'siteIdentifier': None,
+     'uniqueID': '1234abcd-1a2b-3c4d-5d6f-abcd1234ffff'}
+    
+</p>
+</details>
+    
+## Simplified Asset Data
+This code shows the information of all the assets belonging to the user's current organization.
+
+### Execute
+To run this demo, execute the following script:
+
+    python use_case_1/list_of_assets.py
+    
+### Result
+<details><summary>Click for Sample Output</summary>
+<p>
+
+    Organization 1234, Tasty Manufacturing
+
+    Plant 5678, Food Factory:
+    Assets:
+    {'assetGroupID': 1000,
+     'assetID': 2000,
+     'assetName': 'Motor 1',
+     'assetResponsibleID': None,
+     'assetResponsibleName': None,
+     'assetType': {'assetTypeID': 1, 'assetTypeName': 'Motor'},
+     'configurationProfileID': 3,
+     'configurationProfileName': 'Motor Profile',
+     'createdOn': '2018-01-12T16:23:45.931',
+     'description': None,
+     'healthStatus': {'healthCode': 'Healthy', 'healthColor': '#21BE89'},
+     'isFavourite': False,
+     'isPowerTrainComponent': False,
+     'lastSyncTimeStamp': '2018-01-13T16:23:45.931',
+     'lastUpdatedOn': '2018-01-14T16:23:45.931',
+     'locationLatitude': '',
+     'locationLongitude': '',
+     'organization': {'isPrivateOrgarnization': False,
+                      'organizationID': 1234,
+                      'organizationName': 'Tasty Manufacturing'},
+     'plantID': 5678,
+     'plantName': 'Food Factory',
+     'sensorIdentifier': 'S2A0000001-ABCD',
+     'sensorTypeID': 1,
+     'serialNumber': '10',
+     'siteIdentifier': None}
+
+</p>
+</details>
+    
+## Detailed Sensor and Asset Data
+This code shows the detailed information of all the assets belonging to the user's current organization.
+
+### Exectue
+To run this demo, execute the following script:
+    
+    python use_case_1/detailed_asset_data.py
+    
+### Result
+<details><summary>Click for Sample Output</summary>
+<p>
+
+    Organization 1234, Tasty Manufacturing
+
     Plant 5678, Food Factory:
     Assets:
     Detailed data of Asset 2000, Motor 1:
@@ -688,3 +770,10 @@ Sample output:
      'serialNumber': '78',
      'siteIdentifier': None,
      'uniqueID': '1234abcd-1a2b-3c4d-5d6f-abcd1234ffff'}
+     
+</p>
+</details>
+    
+## Settings
+If you have not configured your credentials in the `settings.yaml` file in the root folder,
+the program will ask you to input your username, password, or API key.

@@ -4,7 +4,7 @@
 This code demonstrates how to get the condition indexes of one or multiple assets.
 
 Example:
-    $ python use_case_4_condition_indexes.py -a <ASSET ID LIST>
+    $ python condition_indexes.py -a <ASSET ID LIST>
 
 """
 

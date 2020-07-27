@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Example 4
+"""Example 3
 
-This code prints out the latest measurements from all of your assets.
+This code demonstrates how to get the asset details of all assets belonging to the user's organization.
 
 Example:
-    $ python use_case_4_latest_asset_measurements.py
+    $ python detailed_asset_data.py
 
 """
 
 from smart_sensor_client.smart_sensor_client import SmartSensorClient
+from pprint import pprint
 import argparse
 
 DEFAULT_SETTINGS_FILE = 'settings.yaml'
@@ -43,19 +44,8 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
         else:
             for asset in assets:
                 asset_data = client.asset_get_asset_by_id(asset_id=asset['assetID'])
-                print('Latest measurements of Asset {}, {}:'.format(asset['assetID'], asset['assetName']))
-
-                if asset_data is None:
-                    # If there is an error, skip to the next asset
-                    continue
-
-                # Iterate all the measurements available and print them
-                for m in asset_data['measurements']:
-
-                    # Print measurements that contain values
-                    if m['measurementValue'] is not None:
-                        print('      ' + m['measurementTypeName'].ljust(37) + ':', m['measurementValue'],
-                              '(' + m['timeStamp'] + ')')
+                print('Detailed data of Asset {}, {}:'.format(asset['assetID'], asset['assetName']))
+                pprint(asset_data)
                 print()
 
         print()
@@ -65,7 +55,7 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
 
 # Main body
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Shows the latest measurements of all the assets belonging to the users current organization.')
+    parser = argparse.ArgumentParser(description='Show the information of all the assets belonging to the users current organization.')
     parser.add_argument('-d', '--debug', action='store_true', help='print debug information such as the sent curl request')
     args = parser.parse_args()
 
