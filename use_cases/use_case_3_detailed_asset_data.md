@@ -7,7 +7,7 @@ the program will ask you to input your username, password, or API key.
 
 To run the code, execute:
 
-    python use_case_3_detailed_asset_data.md
+    python use_case_3_detailed_asset_data.py
     
 Sample output:
 
