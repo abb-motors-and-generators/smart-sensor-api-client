@@ -383,8 +383,8 @@ class SmartSensorClient:
         # Parse reply
         assets = []
         for r in reply:
-            #o = {k: r[k] for k in ('sensorTypeID', 'sensorIdentifier', 'assetID', 'assetName', 'serialNumber', 'description', 'assetGroupID')}
-            #assets.append(o)
+            # o = {k: r[k] for k in ('sensorTypeID', 'sensorIdentifier', 'assetID', 'assetName', 'serialNumber', 'description', 'assetGroupID')}
+            # assets.append(o)
             assets.append(r)
 
         return assets
@@ -424,15 +424,15 @@ class SmartSensorClient:
         parameters = dict()
         parameters["assetIDList"] = asset_id_list
         parameters["properties"] = [
-                {
-                    "key": "verb",
-                    "value": "POST"
-                },
-                {
-                    "key": "path",
-                    "value": url
-                },
-            ]
+            {
+                "key": "verb",
+                "value": "POST"
+            },
+            {
+                "key": "path",
+                "value": url
+            },
+        ]
         parameters["template"] = """{ 
                 \"type\": id, 
                 \"content\": { 
@@ -442,7 +442,14 @@ class SmartSensorClient:
                     \"organizationName\": \"{AssetOrganizationName}\" } 
                 }"""
 
-        return self.put_request('Notification/Asset/Channel/' + str(id) + '?channelID=' + str(channel_id), parameters, content_type=content_type)
+        return self.put_request('Notification/Asset/Channel/' + str(id) + '?channelID=' + str(channel_id), parameters,
+                                content_type=content_type)
+
+    def get_condition_index(self, asset_id):
+        """Gets condition indexes of an asset or an asset list"""
+        data = []
+        data.extend(asset_id)
+        return self.post_request('ConditionIndex', data=data)
 
     def get_request(self, api, parameters=None, feature_code=None):
         """Worker function to perform the GET request"""
@@ -482,6 +489,47 @@ class SmartSensorClient:
             return None
 
         return response_json
+
+    def post_request(self, api, data, feature_code=None, content_type=None):
+        """Worker function to perform the POST request"""
+
+        # If the feature code was not provided, try to find it
+        if feature_code is None:
+            feature_code = self.get_feature_code(api)
+
+        # Set up headers
+        headers = dict()
+        if self.auth_token is not None:
+            headers['Authorization'] = 'Bearer ' + self.auth_token
+        if feature_code is not None:
+            headers['FeatureCode'] = feature_code
+        if content_type is not None:
+            headers["Content-Type"] = content_type
+
+        # Set up the URL
+        url = self.url + api
+
+        # Send the request and get the response
+        response = requests.post(url, headers=headers, json=data, proxies=self.proxies)
+
+        # Print curl request
+        if self.debug:
+            print('Sent curl request:')
+            print(curlify.to_curl(response.request))
+
+        if response.status_code != 200:
+            print('Error: Response Code', str(response.status_code))
+            return False
+
+        # Print the JSON response
+        if response.text:
+            try:
+                return json.loads(response.text)
+            except json.JSONDecodeError:
+                txt = f"Unable to decode response content: ({response.text})"
+                print(txt)
+
+        return True
 
     def put_request(self, api, data, feature_code=None, content_type=None):
         """Worker function to perform the PUT request"""
