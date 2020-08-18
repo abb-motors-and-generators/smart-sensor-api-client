@@ -1,0 +1,4 @@
+venv/
+.idea/
+settings.yaml
+smart_sensor_client/__pycache__
