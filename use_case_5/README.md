@@ -9,7 +9,7 @@ This code will plot values of defined measurement types in a defined date range 
 ### Execute
 To run this demo, execute the following script:
 
-     python use_case_5/measurement_values.py
+     python use_case_5/get_historic_measurements.py
 
 ### Result
 <details>
@@ -41,7 +41,7 @@ This code shows the latest measurements of all the assets belonging to the user'
 ### Execute
 To run this demo, execute the following script:
 
-     python use_case_5/latest_asset_measurement.py
+     python use_case_5/get_latest_measurements.py
     
 ### Result
 

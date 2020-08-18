@@ -8,7 +8,7 @@ This code demonstrates how to get the information of every plant in the organiza
 ### Execute
 To run this demo, execute the following script:
 
-    python use_case_1/plant_data.py
+    python use_case_1/get_plant_data.py
 
 ### Result
 <details><summary>Click for Sample Output</summary>
@@ -41,7 +41,7 @@ This code shows the information of all the assets belonging to the user's curren
 ### Execute
 To run this demo, execute the following script:
 
-    python use_case_1/list_of_assets.py
+    python use_case_1/get_simplified_asset_data.py
     
 ### Result
 <details><summary>Click for Sample Output</summary>
@@ -84,10 +84,10 @@ To run this demo, execute the following script:
 ## Detailed Sensor and Asset Data
 This code shows the detailed information of all the assets belonging to the user's current organization.
 
-### Exectue
+### Execute
 To run this demo, execute the following script:
     
-    python use_case_1/detailed_asset_data.py
+    python use_case_1/get_detailed_sensor_and_asset_data.py
     
 ### Result
 <details><summary>Click for Sample Output</summary>

@@ -4,7 +4,7 @@ This code demonstrates how to get the condition indexes of one or multiple asset
 
 ### Execute
 
-    python  python use_case_2/condition_indexes.py
+    python  python use_case_4/get_condition_indexes.py
     
 ### Result
 <details>

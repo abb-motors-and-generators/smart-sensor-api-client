@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Example 6
+"""Use case 2: receive notifications for maintenance alerts and alarms
 
 This code demonstrates how to sign up a webhook or another notification channel, which connects an external URL with the smartsensor platform.
 
