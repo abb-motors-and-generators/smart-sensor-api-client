@@ -66,8 +66,12 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
             measurement_values = [v[1] for v in values_to_plot]
 
             # Add data to the subplots and add a title to each subplot
-            axs[index].plot(measurement_timestamp, measurement_values)
-            axs[index].set_title(measurement['measurementTypeName'])
+            if len(measurements) == 1:
+                axs.plot(measurement_timestamp, measurement_values)
+                axs.set_title(measurement['measurementTypeName'])
+            else:
+                axs[index].plot(measurement_timestamp, measurement_values)
+                axs[index].set_title(measurement['measurementTypeName'])
         else:
             # if no measurements were found for this type, print an error message
             print('No measurements for measurement type ' + str(
