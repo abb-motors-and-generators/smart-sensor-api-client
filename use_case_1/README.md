@@ -1,6 +1,6 @@
 # Use Case 1: Request Asset Details
 
-With this use case, the different kind of asset data can be requested. Find below three example scripts that can be executed.
+With this use case, you can request different kinds of asset data (examples below).
 
 ## Plant Data 
 This code demonstrates how to get the information of every plant in the organization
