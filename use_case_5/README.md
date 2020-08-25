@@ -1,6 +1,6 @@
 # Use Case 5: Request Measurement Data of an Asset	
 
-With this use case, the measurement data can be fetched. You can get the latest measurement or also a series of measurement and plot them in time.
+With this use case, you can fetch measurement data from sensors. You can get the latest measurement or also a series of measurements and plot them in time.
 
 
 ## Plot History Measurement Data 
