@@ -3,7 +3,7 @@
 This code demonstrates how to add a notification channel to a specific asset.
 
 ### Execute
-To run this demo, execute the following script:
+To run this demo, execute the following:
 
     python use_case_2/add_notification_channel.py <ASSET ID LIST> -nt <NOTIFICATION TYPE> -nc <NOTIFICATION CHANNEL> -u <URL>
     
