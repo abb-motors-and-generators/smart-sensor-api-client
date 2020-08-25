@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Example 4
+"""Use case 4: request condition indexes of an asset
 
 This code demonstrates how to get the condition indexes of one or multiple assets.
 
 Example:
-    $ python use_case_4_condition_indexes.py -a <ASSET ID LIST>
+    $ python get_condition_indexes.py -a <ASSET ID LIST>
 
 """
 

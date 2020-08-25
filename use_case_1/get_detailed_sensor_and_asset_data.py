@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Example 1
+"""Use case 1: request asset details - detailed sensor and asset data
 
-This code demonstrates how to get a list of all the assets for each plant in the organization
+This code demonstrates how to get the asset details of all assets belonging to the user's organization.
 
 Example:
-    $ python use_case_1_list_of_assets.py
+    $ python get_detailed_sensor_and_asset_data.py
 
 """
 
@@ -43,7 +43,10 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
             print('No assets in this plant')
         else:
             for asset in assets:
-                pprint(asset)
+                asset_data = client.asset_get_asset_by_id(asset_id=asset['assetID'])
+                print('Detailed data of Asset {}, {}:'.format(asset['assetID'], asset['assetName']))
+                pprint(asset_data)
+                print()
 
         print()
 
@@ -52,7 +55,7 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
 
 # Main body
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Get information of all the assets belonging to the users current organization')
+    parser = argparse.ArgumentParser(description='Show the information of all the assets belonging to the users current organization.')
     parser.add_argument('-d', '--debug', action='store_true', help='print debug information such as the sent curl request')
     args = parser.parse_args()
 

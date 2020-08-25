@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Example 6
+"""Use case 2: receive notifications for maintenance alerts and alarms
 
 This code demonstrates how to sign up a webhook or another notification channel, which connects an external URL with the smartsensor platform.
 
 Example:
-    $ python use_case_6_add_notification_channel.py >ASSET ID LIST< -nt >NOTIFICATION TYPE< -nc >NOTIFICATION CHANNEL< -u >URL<
+    $ python add_notification_channel.py -a >ASSET ID LIST< -t >NOTIFICATION TYPE< -c >NOTIFICATION CHANNEL< -u >URL<
 
 """
 

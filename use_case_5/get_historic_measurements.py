@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Example 5
+"""Use case 5: request historic measurement data of an asset - historic
 
 This code prints out some measurement values for a particular asset
 
 Example:
-    $ python use_case_5_measurement_values.py
+    $ python get_historic_measurements.py
 
 """
 

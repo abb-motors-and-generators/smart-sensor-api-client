@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Example 4
+"""Use case 5: request historic measurement data of an asset - latest
 
 This code prints out the latest measurements from all of your assets.
 
 Example:
-    $ python use_case_4_latest_asset_measurements.py
+    $ python get_latest_measurements.py
 
 """
 
