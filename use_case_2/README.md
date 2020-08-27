@@ -15,6 +15,8 @@ For example, to configure the cloud such that the assets 1234 and 4567 are sendi
 <details>
 <summary>Sample output - Click to expand!</summary>
 <p>
+
+    Task SUCCESS
 </p>
 </details>
 ## Arguments
