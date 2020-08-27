@@ -1,4 +1,4 @@
-# Use Case 6: Add Notification Channel
+# Use Case 2: Add Notification Channel
 
 This code demonstrates how to add a notification channel to a specific asset.
 
