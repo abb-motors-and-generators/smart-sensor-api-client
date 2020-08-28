@@ -52,6 +52,6 @@ You can run each script by executing
 | use_case_1/get_simplified_asset_data.py          | Show all assets inside an organization           | [code](use_case_1/get_simplified_asset_data.py), [usage](use_case_1)          |
 | use_case_1/get_detailed_sensor_and_asset_data.py | Show detailed information about an asset         | [code](use_case_1/get_detailed_sensor_and_asset_data.py), [usage](use_case_1) |
 | use_case_2/add_notification_channel.py           | Add a notification channel to a sensor           | [code](use_case_2/add_notification_channel.py), [usage](use_case_2)           |
-| TODO                                             | TODO                                             | [code](use_case_3/TODO), [usage](use_case_3)                                  |
-| use_case_4/get_condition_indexes.py              | Show condition indexes of one or multiple assets | [code](use_case_4/get_condition_indexes.py), [usage](use_cases_4)             |
+| use_case_3/change_threshold_values_for_kpis.py   | Change KPI thresholds for a specific asset       | [code](use_case_3/change_threshold_values_for_kpis.py), [usage](use_case_3)   |
+| use_case_4/get_condition_indexes.py              | Show condition indexes of one or multiple assets | [code](use_case_4/get_condition_indexes.py), [usage](use_case_4)             |
 | use_case_5/get_historic_measurements.py          | Plot measurement values of a defined asset       | [code](use_case_5/get_historic_measurements.py), [usage](use_case_5)          |
