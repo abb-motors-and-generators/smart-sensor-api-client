@@ -449,7 +449,7 @@ class SmartSensorClient:
         """Gets condition indexes of an asset or an asset list"""
         data = []
         data.extend(asset_id)
-        return self.put_request('ConditionIndex', data=data)
+        return self.post_request('ConditionIndex', data=data)
 
     def change_kpi_threshold(self, asset_id, measurement_type, value_list):
         """Changes KPI thresholds of an asset for a specific measurement type"""
