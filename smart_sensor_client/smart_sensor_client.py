@@ -451,6 +451,38 @@ class SmartSensorClient:
         data.extend(asset_id)
         return self.post_request('ConditionIndex', data=data)
 
+    def change_kpi_threshold(self, asset_id, measurement_type, value_list):
+        """Changes KPI thresholds of an asset for a specific measurement type"""
+        # check if provided list is the correct length
+        if len(value_list) is not 4:
+            print('Error: The value list had length ' + str(len(value_list)) + '. Please pass a list with 4 values which define the ranges between the health status Healthy, Weak and Critical.')
+
+        content_type = 'application/json-patch+json'
+        data = [
+            {
+                "healthStatus": "Healthy",
+                "measurementTypeID": measurement_type,
+                "valueFrom": value_list[0],
+                "valueTo": value_list[1],
+                "enableNotification": True
+            },
+            {
+                "healthStatus": "Weak",
+                "measurementTypeID": measurement_type,
+                "valueFrom": value_list[1],
+                "valueTo": value_list[2],
+                "enableNotification": True
+            },
+            {
+                "healthStatus": "Critical",
+                "measurementTypeID": measurement_type,
+                "valueFrom": value_list[2],
+                "valueTo": value_list[3],
+                "enableNotification": True
+            }
+        ]
+        return self.put_request('Measurement/HealthInterval/' + str(asset_id), data=data, content_type=content_type)
+
     def get_request(self, api, parameters=None, feature_code=None):
         """Worker function to perform the GET request"""
 
@@ -579,9 +611,8 @@ class SmartSensorClient:
         if api == 'Asset/List':
             feature_code = 'EXT_ListAssets'
         elif api == 'Asset/':
-            print('Using EXT_ViewAssetDetails')
             feature_code = 'EXT_ViewAssetDetails'
-        elif api == 'Measurement/HealthInterval':
+        elif api.startswith('Measurement/HealthInterval'):
             feature_code = 'EXT_ConfigureAssetHealth'
         elif 'ConditionIndex' in api:
             feature_code = 'EXT_AssetConditionIndex'
