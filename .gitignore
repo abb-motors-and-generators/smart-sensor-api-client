@@ -2,3 +2,5 @@ venv/
 .idea/
 settings.yaml
 smart_sensor_client/__pycache__
+tests/.env
+*.pyc
