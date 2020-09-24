@@ -17,7 +17,7 @@ import argparse
 DEFAULT_SETTINGS_FILE = 'settings.yaml'
 
 
-def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
+def run_task(settings_file=DEFAULT_SETTINGS_FILE, asset_id: int = None, measurement_type: list = None, start_date: str = None, end_date: str = None, debug: bool = False) -> bool:
 
     # Create the client instance
     client = SmartSensorClient(settings_file=settings_file, debug=debug)
@@ -31,22 +31,9 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
     print('Organization {}, {}'.format(client.organization_id, client.organization_name))
     print()
 
-    # Ask users for their input:
-    print('Please enter your query parameters:')
-    asset_id = input('Asset ID: ')
-
-    # Print possible measurement types for this asset
-    possible_measurement_types = client.get_measurement_types(asset_id=asset_id)
-    for x in possible_measurement_types:
-        print(str(x['measurementTypeName']) + ' -> ' + str(x['measurementTypeID']))
-
-    measurement_type = input('Measurement type (find possible IDs in list above, separated by commas): ')
-    start_date = input('Start date (YYYY-MM-DD): ')
-    end_date = input('End date (YYYY-MM-DD): ')
-
     # Get the measurement data during this time
     measurements = client.get_measurement_value(asset_id=asset_id,
-                                                measurement_type=measurement_type,
+                                                measurement_type=','.join(str(v) for v in measurement_type),
                                                 start_time=start_date,
                                                 end_time=end_date)
 
@@ -87,10 +74,14 @@ def run_task(settings_file=DEFAULT_SETTINGS_FILE, debug: bool = False) -> bool:
 # Main body
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Plot values of one or more measurement types in a defined date range of a chosen asset.')
+    parser.add_argument('-a', '--asset-id', type=int, help='an integer for the asset ID', required=True)
+    parser.add_argument('-m', '--measurement-type', nargs='+',  help='an integer or a list of integers for the measurement types', type=int, required=True)
+    parser.add_argument('-s', '--start-date', type=str, help='a string with the start date (YYY-MM-DD)', required=True)
+    parser.add_argument('-e', '--end-date', type=str, help='a string with the end date (YYY-MM-DD)', required=True)
     parser.add_argument('-d', '--debug', action='store_true', help='print debug information such as the sent curl request')
     args = parser.parse_args()
 
-    result = run_task(debug=args.debug)
+    result = run_task(asset_id=args.asset_id, measurement_type=args.measurement_type, start_date=args.start_date, end_date=args.end_date, debug=args.debug)
 
     if result is True:
         print('Task SUCCESS')

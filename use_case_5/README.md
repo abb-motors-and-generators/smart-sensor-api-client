@@ -9,8 +9,16 @@ This code will plot values of defined measurement types in a defined date range 
 ### Execute
 To run this demo, execute the following script:
 
-     python use_case_5/get_historic_measurements.py
+     python use_case_5/get_historic_measurements.py -a 1234 5678 -m 3 -
 
+To run this demo, execute the following:
+
+    python use_case_5/get_historic_measurements.py -a <ASSET ID LIST> -m <MEASUREMENT TYPE> -s <START DATE> -e <END DATE>
+    
+For example, to get the skin temperature measurements (measurement type 4) from the assets 1234 and 4567 in the time range of 2020-01-01 until 2020-02-01 you can execute:
+    
+    python use_case_5/get_historic_measurements.py -a 1234 4567 -m 4 -s 2020-01-01 -e 2020-02-01
+    
 ### Result
 <details>
 <summary>Sample output - Click to expand!</summary>
@@ -18,15 +26,6 @@ To run this demo, execute the following script:
 
     Organization 1234, Tasty Manufacturing
 
-    Please enter your query parameters:
-    Asset ID: 2000
-    Speed -> 2
-    Slip -> 3
-    Skin Temperature -> 4
-    Operating Power -> 6
-    Measurement type (find possible IDs in list above, separated by commas): 2
-    Start date (YYYY-MM-DD): 2019-02-15
-    End date (YYYY-MM-DD): 2019-06-15
     Task SUCCESS
   
 ![Example Measurement Plot](example_measurement_plot.png "Example Measurement Plot")
