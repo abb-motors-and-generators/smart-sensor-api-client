@@ -1,4 +1,2 @@
 pytest
-pytest-mpl
 python-dotenv
-mock

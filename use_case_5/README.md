@@ -7,10 +7,6 @@ With this use case, you can fetch measurement data from sensors. You can get the
 This code will plot values of defined measurement types in a defined date range of a chosen asset.
 
 ### Execute
-To run this demo, execute the following script:
-
-     python use_case_5/get_historic_measurements.py -a 1234 5678 -m 3 -
-
 To run this demo, execute the following:
 
     python use_case_5/get_historic_measurements.py -a <ASSET ID LIST> -m <MEASUREMENT TYPE> -s <START DATE> -e <END DATE>

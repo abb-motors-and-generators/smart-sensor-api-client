@@ -1,9 +1,7 @@
 import pytest
 import os
-#import mock
 from unittest.mock import patch
 
-from smart_sensor_client.smart_sensor_client import SmartSensorClient
 from tests import SETTING_FILE_PATH, setup_test_environment
 
 from use_case_1.get_detailed_sensor_and_asset_data import run_task as run_task_1_1
