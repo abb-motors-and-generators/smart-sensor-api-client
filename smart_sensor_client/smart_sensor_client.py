@@ -72,6 +72,7 @@ class SmartSensorClient:
                 # Copy the authentication information
                 self.api_key = configs.get('api_key')
                 self.username = configs.get('username')
+                self.url = configs.get('api_url')
 
             except yaml.YAMLError as e:
                 print(e)
